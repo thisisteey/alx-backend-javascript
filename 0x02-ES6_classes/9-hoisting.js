@@ -32,7 +32,7 @@ export class StudentHolberton {
 
   // Get the HolbertonClass of the student
   get holbertonClass() {
-    return this.holbertonClass;
+    return this._holbertonClass;
   }
 
   // Gets the full description of the student including HolbertonClass details

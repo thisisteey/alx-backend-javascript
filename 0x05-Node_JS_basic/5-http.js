@@ -2,8 +2,8 @@ const http = require('http');
 
 const args = process.argv.slice(2);
 const countStudents = require('./3-read_file_async');
-const database = args[0];
 
+const database = args[0];
 const port = 1245;
 const host = 'localhost';
 const app = http.createServer();
@@ -12,7 +12,7 @@ app.on('request', async (req, res) => {
   const resMsg = 'Hello Holberton School!';
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  
+
   const { url } = req;
   if (url === '/') {
     res.write(resMsg);

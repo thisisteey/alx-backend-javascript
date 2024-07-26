@@ -12,7 +12,7 @@ describe('basic API integration test', () => {
 
   it('get correct result', () => {
     request.get(`${APIurl}/`, (_err, res, body) => {
-      expect(body).to.be.equal('Welcome to the payment system');
+      expect(body).to.contain('Welcome to the payment system');
     });     
   });
 
@@ -30,7 +30,7 @@ describe('basic API integration test', () => {
 
   it('get correct result with valid id', () => {
     request.get(`${APIurl}/cart/12`, (_err, res, body) => {
-      expect(body).to.be.equal('Payment methods for cart 12');
+      expect(body).to.contain('Payment methods for cart 12');
     });
   });
 

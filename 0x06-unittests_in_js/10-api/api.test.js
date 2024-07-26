@@ -46,13 +46,13 @@ describe('basic API integration test', () => {
     });
   });
 
-  it('get correct content type', () => {
+  it('get correct content type with valid id', () => {
     request.get(`${APIurl}/cart/12`, (_err, res, body) => {
       expect(res.headers['content-type']).to.be.equal('text/html; charset=utf-8');
     });
   });
 
-  it('get correct content type', () => {
+  it('get correct content type with invalid id', () => {
     request.get(`${APIurl}/cart/a12`, (_err, res, body) => {
       expect(res.headers['content-type']).to.be.equal('text/html; charset=utf-8');
     });
@@ -70,7 +70,7 @@ describe('basic API integration test', () => {
     });
   });
 
-  it('post correct content type', () => {
+  it('post correct content type for valid login', () => {
     request.post(`${APIurl}/login`, {json: {userName: 'Taiwo'}}, (_err, res, body) => {
       expect(res.headers['content-type']).to.be.equal('text/html; charset=utf-8');
     });
@@ -89,7 +89,7 @@ describe('basic API integration test', () => {
     });
   });
 
-  it('get correct content type', () => {
+  it('get correct content type for valid available payments', () => {
     request.get(`${APIurl}/available_payments`, (_err, res, body) => {
       expect(res.headers['content-type']).to.equal('application/json; charset=utf-8');
     });
